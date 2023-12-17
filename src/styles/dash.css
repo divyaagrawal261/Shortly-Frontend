@@ -1,0 +1,44 @@
+:root{
+    --bg-main: #F5E4D7;
+    --secondary:#FBFEF9;
+    --primary:#0A100D;
+    --tertiary:#F1D6B8;
+}
+h3, h2{
+    color: var(--primary);
+}
+button:hover{
+    background-color: var(--primary) !important;
+}
+.navbar{
+    background-color: var(--primary) !important;
+}
+body{
+    background-color: var(--bg-main);
+}
+.urlAnalytics{
+border: 1px solid grey;
+padding: 2px;
+display: flex;
+margin-bottom: 2px;
+background-color: var(--secondary);
+}
+.analytics-container{
+    background-color: var(--tertiary);
+display: flex;
+flex-direction: column;
+justify-content: center;
+border: 1px solid grey;
+padding: 10px 20px;
+border-radius: 0.5rem;
+}
+.shortLink{
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+    border-color: grey;
+}
+.serialNumber{
+    border-width: 0px 1px 0px 0px;
+    border-style: solid;
+    border-color: grey;
+}

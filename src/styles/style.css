@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --container-color:#F9CB76;
+}
+body{
+    height: 100vh;
+    background-color: rgb(27, 27, 27);
+}
+section{
+    height: 100%;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section .container{
+    background-color: var(--container-color);
+    padding: 1rem;
+    width: 22rem;
+    height: 16em;
+    border-radius: 1rem;
+}
+form label{
+    font-weight: bold !important;
+}
+form button{
+    background-color: #5A0C1E !important;
+    border: none !important;
+}
+a{
+    color: black;
+}
