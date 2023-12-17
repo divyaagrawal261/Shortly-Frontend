@@ -42,3 +42,6 @@ border-radius: 0.5rem;
     border-style: solid;
     border-color: grey;
 }
+::-webkit-scrollbar{
+    display: none;
+}

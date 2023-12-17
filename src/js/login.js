@@ -23,7 +23,7 @@ const login = (event) => {
       .then((data) => {
         console.log(data);
         accessToken = data.accessToken;
-        localStorage.setItem("accessToken", accessToken);
+        setAccessTokenWithExpiry(accessToken, 15)
         getUserDetails(accessToken);
       })
       .catch((err) => console.log(err));
@@ -33,7 +33,6 @@ const login = (event) => {
 };
 
 const getUserDetails = (accessToken) => {
-//   accessToken.preventDefault();
   fetch(getUserDetailsUrl, {
     method: "GET",
     headers: {
@@ -44,8 +43,17 @@ const getUserDetails = (accessToken) => {
     .then((response) => response.json())
     .then((data) => {
       console.log(data);
-      localStorage.setItem("userDetails",  data.id);
       window.location.href = "./public/dashBoard.html";
     });
 };
+
+function setAccessTokenWithExpiry(accessToken, expiresInMinutes) {
+  const now = new Date();
+  const expirationTime = now.getTime() + expiresInMinutes * 60 * 1000; 
+  localStorage.setItem('accessToken', JSON.stringify({
+    token: accessToken,
+    expiry: expirationTime
+  }));
+}
+
 loginBtn.addEventListener("click", login);
