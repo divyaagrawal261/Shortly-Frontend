@@ -1,5 +1,5 @@
-const loginurl = "http://localhost:8001/api/users/login";
-const getUserDetailsUrl = "http://localhost:8001/api/users/current";
+const loginurl = "https://url-shortener-backend-45xs.onrender.com/api/users/login";
+const getUserDetailsUrl = "https://url-shortener-backend-45xs.onrender.com/api/users/current";
 
 const loginBtn = document.getElementById("loginBtn");
 var accessToken;

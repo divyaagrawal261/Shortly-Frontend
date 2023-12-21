@@ -1,5 +1,5 @@
-const signUpurl = "http://localhost:8001/api/users/register";
-const loginUrl = "http://localhost:8001/api/users/login";
+const signUpurl = "https://url-shortener-backend-45xs.onrender.com/api/users/register";
+const loginUrl = "https://url-shortener-backend-45xs.onrender.com/api/users/login";
 
 const loginBtn = document.getElementById("loginBtn");
 var accessToken;
