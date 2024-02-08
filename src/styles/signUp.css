@@ -3,11 +3,17 @@
     padding: 0;
 }
 :root{
-    --container-color:#F9CB76;
+    --container-color:#fff5e381;
 }
 body{
     height: 100vh;
     background-color: rgb(27, 27, 27);
+    background-image: url(https://wallpaper-house.com/data/out/7/wallpaper2you_171801.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow-y: hidden;
+    justify-content: center;
+    display: flex;
 }
 section{
     height: 100%;
@@ -18,9 +24,10 @@ section{
 }
 section .container{
     background-color: var(--container-color);
+    backdrop-filter: blur(5px);
     padding: 1rem;
     width: 22rem;
-    height: 22rem;
+    height: 16em;
     border-radius: 1rem;
 }
 form label{
@@ -30,6 +37,23 @@ form button{
     background-color: #5A0C1E !important;
     border: none !important;
 }
+form button:hover{
+    background-color: black !important;
+    color: white !important;
+}
 a{
     color: black;
+}
+.pop-up{
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    color: rgb(247, 7, 7);
+    border: 1px solid var(--container-color);
+    margin: 5px;
+    border-radius: 10px;
+    display: none;
+}
+.container{
+    height: fit-content !important;
 }

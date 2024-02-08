@@ -1,5 +1,6 @@
-const signUpurl = "https://url-shortener-backend-45xs.onrender.com/api/users/register";
-const loginUrl = "https://url-shortener-backend-45xs.onrender.com/api/users/login";
+const apiURL="http://localhost:8001";
+const signUpurl = `${apiURL}/api/users/register`;
+const loginUrl = `${apiURL}/api/users/login`;
 
 const loginBtn = document.getElementById("loginBtn");
 var accessToken;
@@ -21,7 +22,15 @@ const signUp = (event) => {
         password: loginPassword,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => 
+      {
+        if(response.ok) return response.json()
+      else 
+        {
+         document.querySelector(".pop-up").style.display="flex";
+         setTimeout(()=>document.querySelector(".pop-up").style.display="none",2000)
+        }
+    })
       .then((data) => {
         console.log(data);
         login(loginEmail,loginPassword);

@@ -1,47 +1,97 @@
-:root{
-    --bg-main: #F5E4D7;
-    --secondary:#FBFEF9;
-    --primary:#0A100D;
-    --tertiary:#F1D6B8;
+:root {
+  --bg-main: #f5e4d7;
+  --secondary: #000000a9;
+  --primary: #00000080;
+  --tertiary: #5a5a5a3b;
 }
-h3, h2{
-    color: var(--primary);
+h3,
+h2 {
+  color: var(--bg-main);
+  background-color: rgba(0, 0, 0, 0.877);
+  padding: 10px;
+  width: fit-content;
+  border-radius: 10px;
 }
-button:hover{
-    background-color: var(--primary) !important;
+button:hover {
+  background-color: var(--primary) !important;
 }
-.navbar{
-    background-color: var(--primary) !important;
+.navbar {
+  background-color: var(--primary) !important;
+  backdrop-filter: blur(50px);
 }
-body{
-    background-color: var(--bg-main);
+body {
+  background-image: url(../assets/dashBG.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
 }
-.urlAnalytics{
-border: 1px solid grey;
-padding: 2px;
-display: flex;
-margin-bottom: 2px;
-background-color: var(--secondary);
+.urlAnalytics {
+  border: 1px solid grey;
+  padding: 2px;
+  display: flex;
+  margin-bottom: 2px;
+  background-color: rgba(0, 0, 0, 0.671);
+  backdrop-filter: blur(5px);
+  color: white;
 }
-.analytics-container{
-    background-color: var(--tertiary);
-display: flex;
-flex-direction: column;
-justify-content: center;
-border: 1px solid grey;
-padding: 10px 20px;
-border-radius: 0.5rem;
+.analytics-container {
+  background-color: rgba(0, 0, 0, 0.671);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid grey;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  overflow-y: visible;
 }
-.shortLink{
-    border-width: 0px 1px 0px 0px;
-    border-style: solid;
-    border-color: grey;
+.shortLink {
+  border-width: 0px 1px 0px 0px;
+  border-style: solid;
+  border-color: grey;
 }
-.serialNumber{
-    border-width: 0px 1px 0px 0px;
-    border-style: solid;
-    border-color: grey;
+.shortLink a{
+    text-decoration: none;
+    color:white ;
 }
-::-webkit-scrollbar{
-    display: none;
+.serialNumber {
+  border-width: 0px 1px 0px 0px;
+  border-style: solid;
+  border-color: grey;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.card {
+  background-color: rgba(0, 0, 0, 0.671);
+  border: 1px solid rgba(255, 255, 255, 0.137);
+}
+.card input {
+  background-color: rgba(0, 0, 0, 0.418);
+  backdrop-filter: blur(10px);
+  color: white !important;
+  outline: none;
+}
+.card input:focus {
+  background-color: rgba(0, 0, 0, 0.418);
+  backdrop-filter: blur(10px);
+  outline: none;
+  color: white;
+}
+.speedometer {
+  background-image: url(../assets/speedometer.png);
+  height: 200px;
+  font-size: 35px;
+  color: white;
+  border-radius: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1/1 !important;
+}
+.speedometerContainer {
+  background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0, 0));
+}
+.urlAnalytics:hover{
+    background-color:rgb(41, 41, 41);
 }

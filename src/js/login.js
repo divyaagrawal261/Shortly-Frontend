@@ -1,5 +1,7 @@
-const loginurl = "https://url-shortener-backend-45xs.onrender.com/api/users/login";
-const getUserDetailsUrl = "https://url-shortener-backend-45xs.onrender.com/api/users/current";
+const apiURL="http://localhost:8001";
+
+const loginurl = `${apiURL}/api/users/login`;
+const getUserDetailsUrl = `${apiURL}/api/users/current`;
 
 const loginBtn = document.getElementById("loginBtn");
 var accessToken;
@@ -19,7 +21,15 @@ const login = (event) => {
         password: loginPassword,
       }),
     })
-      .then((response) => response.json())
+      .then((response) => 
+      {
+        if(response.ok) return response.json()
+      else 
+        {
+         document.querySelector(".pop-up").style.display="flex";
+         setTimeout(()=>document.querySelector(".pop-up").style.display="none",2000)
+        }
+    })
       .then((data) => {
         console.log(data);
         accessToken = data.accessToken;
