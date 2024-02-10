@@ -1,4 +1,4 @@
-const apiURL="http://localhost:8001";
+const apiURL="https://shortly-backend-8v8s.onrender.com";
 const signUpurl = `${apiURL}/api/users/register`;
 const loginUrl = `${apiURL}/api/users/login`;
 

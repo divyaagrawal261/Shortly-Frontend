@@ -1,5 +1,5 @@
 const storedToken = localStorage.getItem('accessToken');
-const apiURL="http://localhost:8001";
+const apiURL="https://shortly-backend-8v8s.onrender.com";
 const token=JSON.parse(storedToken).token;
 const allUrls=`${apiURL}/api/url`;
 const container=document.querySelector(".analytics-container");
