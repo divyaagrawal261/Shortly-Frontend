@@ -4,6 +4,7 @@
   --primary: #00000080;
   --tertiary: #5a5a5a3b;
 }
+
 h3,
 h2 {
   color: var(--bg-main);
@@ -12,19 +13,23 @@ h2 {
   width: fit-content;
   border-radius: 10px;
 }
+
 button:hover {
   background-color: var(--primary) !important;
 }
+
 .navbar {
   background-color: var(--primary) !important;
   backdrop-filter: blur(50px);
 }
+
 body {
   background-image: url(../assets/dashBG.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
 }
+
 .urlAnalytics {
   border: 1px solid grey;
   padding: 2px;
@@ -34,6 +39,7 @@ body {
   backdrop-filter: blur(5px);
   color: white;
 }
+
 .analytics-container {
   background-color: rgba(0, 0, 0, 0.671);
   display: flex;
@@ -44,39 +50,47 @@ body {
   border-radius: 0.5rem;
   overflow-y: visible;
 }
+
 .shortLink {
   border-width: 0px 1px 0px 0px;
   border-style: solid;
   border-color: grey;
 }
-.shortLink a{
-    text-decoration: none;
-    color:white ;
+
+.shortLink a {
+  text-decoration: none;
+  color: white;
 }
+
 .serialNumber {
   border-width: 0px 1px 0px 0px;
   border-style: solid;
   border-color: grey;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
+
 .card {
   background-color: rgba(0, 0, 0, 0.671);
   border: 1px solid rgba(255, 255, 255, 0.137);
 }
+
 .card input {
   background-color: rgba(0, 0, 0, 0.418);
   backdrop-filter: blur(10px);
   color: white !important;
   outline: none;
 }
+
 .card input:focus {
   background-color: rgba(0, 0, 0, 0.418);
   backdrop-filter: blur(10px);
   outline: none;
   color: white;
 }
+
 .speedometer {
   background-image: url(../assets/speedometer.png);
   height: 200px;
@@ -89,9 +103,55 @@ body {
   align-items: center;
   aspect-ratio: 1/1 !important;
 }
+
 .speedometerContainer {
   background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0, 0));
 }
-.urlAnalytics:hover{
-    background-color:rgb(41, 41, 41);
+
+.urlAnalytics:hover {
+  background-color: rgb(41, 41, 41);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  h3,
+  h2 {
+    font-size: 1.5rem; /* Adjust heading size for smaller screens */
+    padding: 8px; /* Reduce padding */
+  }
+
+  .urlAnalytics {
+    flex-direction: column; /* Stack elements on smaller screens */
+    padding: 5px; /* Reduce padding */
+  }
+
+  .analytics-container {
+    padding: 10px; /* Adjust padding */
+  }
+
+  .speedometer {
+    height: 150px; /* Reduce speedometer size */
+    font-size: 28px; /* Adjust font size */
+  }
+}
+
+@media (max-width: 480px) {
+  h3,
+  h2 {
+    font-size: 1.2rem; /* Further reduce heading size */
+    padding: 5px; /* Further reduce padding */
+  }
+
+  .urlAnalytics {
+    padding: 3px; /* Adjust padding for small screens */
+  }
+
+  .card {
+    padding: 5px; /* Adjust card padding */
+  }
+
+  .speedometer {
+    height: 120px; /* Further reduce speedometer size */
+    font-size: 24px; /* Adjust font size */
+  }
 }

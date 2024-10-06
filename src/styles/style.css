@@ -1,50 +1,64 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Ensures padding and border are included in total width and height */
 }
-:root{
-    --container-color:#fff5e381;
+
+:root {
+    --container-color: #fff5e381;
 }
-body{
+
+body {
     height: 100vh;
     background-color: rgb(27, 27, 27);
     background-image: url(https://p4.wallpaperbetter.com/wallpaper/883/59/727/logan-weaver-airplane-cockpit-screens-vertical-hd-wallpaper-preview.jpg);
     background-size: cover;
-    background-position: 50% 50%;
+    background-position: center;
     overflow-y: hidden;
     justify-content: center;
     display: flex;
 }
-section{
+
+section {
     height: 100%;
     padding: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-section .container{
+
+section .container {
     background-color: var(--container-color);
     backdrop-filter: blur(5px);
     padding: 1rem;
-    width: 22rem;
-    height: 16em;
+    width: 90%; /* Changed to a percentage for responsiveness */
+    max-width: 22rem; /* Maintain maximum width */
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 16em; /* Maintain minimum height */
     border-radius: 1rem;
 }
-form label{
+
+form label {
     font-weight: bold !important;
 }
-form button{
+
+form button {
     background-color: #5A0C1E !important;
     border: none !important;
+    width: 100%; /* Make button full width */
+    padding: 0.5rem; /* Add padding for better touch targets */
 }
-form button:hover{
+
+form button:hover {
     background-color: black !important;
     color: white !important;
 }
-a{
+
+a {
     color: black;
 }
-.pop-up{
+
+.pop-up {
     position: absolute;
     background-color: rgb(255, 255, 255);
     padding: 10px;
@@ -53,4 +67,27 @@ a{
     margin: 5px;
     border-radius: 10px;
     display: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    section .container {
+        width: 90%; /* Full width on smaller screens */
+        padding: 1rem; /* Add more padding */
+    }
+
+    form button {
+        padding: 0.75rem; /* Increase button padding for better touch on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    section .container {
+        min-height: 20em; /* Adjust minimum height for small screens */
+    }
+
+    body {
+        flex-direction: column; /* Stack content vertically on very small screens */
+        justify-content: flex-start; /* Align items to the top */
+    }
 }
