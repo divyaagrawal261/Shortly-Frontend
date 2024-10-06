@@ -10,37 +10,32 @@ const login = (event) => {
   event.preventDefault();
   const loginEmail = document.getElementById("exampleInputEmail1").value;
   const loginPassword = document.getElementById("exampleInputPassword1").value;
-  try {
-    fetch(loginurl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: loginEmail,
-        password: loginPassword,
-      }),
+  fetch(loginurl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      email: loginEmail,
+      password: loginPassword,
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        document.querySelector(".pop-up").style.display = "flex";
+        setTimeout(() => document.querySelector(".pop-up").style.display = "none", 2000);
+        throw new Error("Invalid credentials");
+      }
+      return response.json();
     })
-      .then((response) => 
-      {
-        if(response.ok) return response.json()
-      else 
-        {
-         document.querySelector(".pop-up").style.display="flex";
-         setTimeout(()=>document.querySelector(".pop-up").style.display="none",2000)
-        }
+    .then((data) => {
+      accessToken = data.accessToken;
+      setAccessTokenWithExpiry(accessToken, 15);
+      getUserDetails(accessToken);
     })
-      .then((data) => {
-        console.log(data);
-        accessToken = data.accessToken;
-        setAccessTokenWithExpiry(accessToken, 15)
-        getUserDetails(accessToken);
-      })
-      .catch((err) => console.log(err));
-  } catch (err) {
-    console.log(err);
-  }
+    .catch((err) => console.log(err));
 };
+
 
 const getUserDetails = (accessToken) => {
   fetch(getUserDetailsUrl, {
