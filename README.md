@@ -113,17 +113,6 @@ To run this project locally, follow these steps:
 └── README.md
 ```
 
-## Screenshots
-
-### Login Page:
-![Login Page](./src/assets/screenshots/login.png)
-
-### Signup Page:
-![Signup Page](./src/assets/screenshots/signup.png)
-
-### Dashboard (Cockpit):
-![Dashboard](./src/assets/screenshots/dashboard.png)
-
 ## Future Enhancements
 
 - **Database Integration**: Store user data and URL analytics in a database (e.g., MongoDB or PostgreSQL) instead of local storage.
