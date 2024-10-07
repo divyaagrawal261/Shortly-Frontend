@@ -3,95 +3,280 @@
   --secondary: #000000a9;
   --primary: #00000080;
   --tertiary: #5a5a5a3b;
+  --accent: #ff6b6b;
+  --text-light: #ffffff;
+  --text-dark: #333333;
 }
-h3,
-h2 {
-  color: var(--bg-main);
-  background-color: rgba(0, 0, 0, 0.877);
-  padding: 10px;
-  width: fit-content;
-  border-radius: 10px;
-}
-button:hover {
-  background-color: var(--primary) !important;
-}
-.navbar {
-  background-color: var(--primary) !important;
-  backdrop-filter: blur(50px);
-}
+
 body {
   background-image: url(../assets/dashBG.jpg);
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h3, h2 {
+  color: var(--bg-main);
+  background-color: rgba(0, 0, 0, 0.877);
+  padding: 10px 20px;
+  width: fit-content;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+h3:hover, h2:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+button {
+  background-color: var(--accent);
+  color: var(--text-light);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  background-color: var(--primary) !important;
+  backdrop-filter: blur(50px);
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
 .urlAnalytics {
-  border: 1px solid grey;
-  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px;
   display: flex;
-  margin-bottom: 2px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
   background-color: rgba(0, 0, 0, 0.671);
   backdrop-filter: blur(5px);
-  color: white;
+  color: var(--text-light);
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
+
 .analytics-container {
   background-color: rgba(0, 0, 0, 0.671);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 1px solid grey;
-  padding: 10px 20px;
-  border-radius: 0.5rem;
-  overflow-y: visible;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  overflow-y: auto;
+  max-height: 80vh;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.shortLink {
+
+.shortLink, .serialNumber {
   border-width: 0px 1px 0px 0px;
   border-style: solid;
-  border-color: grey;
+  border-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  flex: 1;
+  min-width: 100px;
+  word-break: break-all;
 }
-.shortLink a{
-    text-decoration: none;
-    color:white ;
+
+.shortLink a {
+  text-decoration: none;
+  color: var(--accent);
+  transition: color 0.3s ease;
 }
-.serialNumber {
-  border-width: 0px 1px 0px 0px;
-  border-style: solid;
-  border-color: grey;
+
+.shortLink a:hover {
+  color: var(--bg-main);
 }
+
 ::-webkit-scrollbar {
-  display: none;
+  width: 8px;
 }
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-main);
+}
+
 .card {
   background-color: rgba(0, 0, 0, 0.671);
   border: 1px solid rgba(255, 255, 255, 0.137);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
 .card input {
   background-color: rgba(0, 0, 0, 0.418);
   backdrop-filter: blur(10px);
-  color: white !important;
+  color: var(--text-light) !important;
   outline: none;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
+
 .card input:focus {
-  background-color: rgba(0, 0, 0, 0.418);
-  backdrop-filter: blur(10px);
-  outline: none;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.518);
+  border-color: var(--accent);
 }
+
 .speedometer {
   background-image: url(../assets/speedometer.png);
   height: 200px;
-  font-size: 35px;
-  color: white;
-  border-radius: 100%;
+  font-size: 30px;
+  color: var(--text-light);
+  border-radius: 50%;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   aspect-ratio: 1/1 !important;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
 }
+
+.speedometer:hover {
+  transform: scale(1.05);
+}
+
 .speedometerContainer {
   background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0, 0));
+  padding: 20px;
+  border-radius: 10px;
 }
-.urlAnalytics:hover{
-    background-color:rgb(41, 41, 41);
+
+.urlAnalytics:hover {
+  background-color: rgba(65, 65, 65, 0.8);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+  
+  .container {
+    width: 95%;
+  }
+  
+  h3, h2 {
+    font-size: 1.3rem;
+  }
+  
+  .speedometer {
+    height: 180px;
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+  
+  h3, h2 {
+    font-size: 1.2rem;
+    padding: 8px 16px;
+  }
+  
+  .analytics-container {
+    padding: 15px;
+  }
+  
+  .speedometer {
+    height: 150px;
+    font-size: 24px;
+  }
+  
+  .card {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 13px;
+  }
+  
+  .container {
+    padding: 10px;
+  }
+  
+  h3, h2 {
+    font-size: 1.1rem;
+    padding: 6px 12px;
+  }
+  
+  .urlAnalytics {
+    flex-direction: column;
+  }
+  
+  .shortLink, .serialNumber {
+    border-width: 0px 0px 1px 0px;
+    padding: 8px 0;
+  }
+  
+  .speedometer {
+    height: 120px;
+    font-size: 20px;
+  }
+  
+  .card {
+    padding: 10px;
+  }
+  
+  button {
+    padding: 8px 16px;
+  }
 }
