@@ -11,7 +11,6 @@ Shortly is a URL shortening service that allows users to generate shortened URLs
 - [Installation](#installation)
 - [Usage](#usage)
 - [Folder Structure](#folder-structure)
-- [Screenshots](#screenshots)
 - [Future Enhancements](#future-enhancements)
 - [License](#license)
 
