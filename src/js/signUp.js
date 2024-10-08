@@ -6,40 +6,36 @@ const loginBtn = document.getElementById("loginBtn");
 var accessToken;
 
 const signUp = (event) => {
-    event.preventDefault();
-    const username=document.getElementById("exampleUsername").value;
+  event.preventDefault();
+  const username = document.getElementById("exampleUsername").value;
   const loginEmail = document.getElementById("exampleInputEmail1").value;
   const loginPassword = document.getElementById("exampleInputPassword1").value;
-  try {
-    fetch(signUpurl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username:username,
-        email: loginEmail,
-        password: loginPassword,
-      }),
+  fetch(signUpurl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: username,
+      email: loginEmail,
+      password: loginPassword,
+    }),
+  })
+    .then((response) => {
+      if (!response.ok) {
+        document.querySelector(".pop-up").style.display = "flex";
+        setTimeout(() => document.querySelector(".pop-up").style.display = "none", 2000);
+        throw new Error("Sign-up failed");
+      }
+      return response.json();
     })
-      .then((response) => 
-      {
-        if(response.ok) return response.json()
-      else 
-        {
-         document.querySelector(".pop-up").style.display="flex";
-         setTimeout(()=>document.querySelector(".pop-up").style.display="none",2000)
-        }
+    .then((data) => {
+      console.log(data);
+      login(loginEmail, loginPassword);
     })
-      .then((data) => {
-        console.log(data);
-        login(loginEmail,loginPassword);
-      })
-      .catch((err) => console.log(err));
-  } catch (err) {
-    console.log(err);
-  }
+    .catch((err) => console.log(err));
 };
+
 
 const login = (email,password) => {
     try {
